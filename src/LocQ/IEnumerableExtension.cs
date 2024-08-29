@@ -52,4 +52,12 @@ public static class IEnumerableExtension
         }
 
     }
+
+    public static IEnumerable<T> Distinct<T>(this IEnumerable<T> source)
+    {
+        if (source == null)
+            throw new ArgumentNullException(nameof(source));
+
+        throw new NotImplementedException();
+    }
 }
