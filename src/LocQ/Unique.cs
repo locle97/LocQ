@@ -5,6 +5,14 @@ public static class UniqueExtension
         if (source == null)
             throw new ArgumentNullException(nameof(source));
 
-        throw new NotImplementedException();
+        HashSet<T> set = new HashSet<T>();
+        foreach (var item in source)
+        {
+          if (set.Contains(item))
+            continue;
+
+          set.Add(item);
+          yield return item;
+        }
     }
 }
