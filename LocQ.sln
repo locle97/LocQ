@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9052BE7D-381E-4987-B2B5-1FF54D1A8DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocQ", "src\LocQ\LocQ.csproj", "{A50B6A61-21D2-495C-89FD-CD1C25D055E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0171CBBD-59D1-4AAD-A2A4-E028B2F0C2C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocQ.Tests", "tests\LocQ.Tests\LocQ.Tests.csproj", "{D51666B1-E8F1-491C-BA11-59A04418851F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A50B6A61-21D2-495C-89FD-CD1C25D055E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50B6A61-21D2-495C-89FD-CD1C25D055E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50B6A61-21D2-495C-89FD-CD1C25D055E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50B6A61-21D2-495C-89FD-CD1C25D055E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51666B1-E8F1-491C-BA11-59A04418851F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51666B1-E8F1-491C-BA11-59A04418851F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51666B1-E8F1-491C-BA11-59A04418851F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51666B1-E8F1-491C-BA11-59A04418851F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A50B6A61-21D2-495C-89FD-CD1C25D055E0} = {9052BE7D-381E-4987-B2B5-1FF54D1A8DF0}
+		{D51666B1-E8F1-491C-BA11-59A04418851F} = {0171CBBD-59D1-4AAD-A2A4-E028B2F0C2C5}
+	EndGlobalSection
+EndGlobal
