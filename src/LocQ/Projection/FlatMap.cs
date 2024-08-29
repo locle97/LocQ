@@ -1,5 +1,3 @@
-namespace LocQ.Projection;
-
 public static class FlatMapExtension
 {
     public static IEnumerable<TResult> FlatMap<TSource, TResult>(this IEnumerable<TSource> source,

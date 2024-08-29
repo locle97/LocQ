@@ -1,5 +1,3 @@
-namespace LocQ.Projection;
-
 public static class MapExtension
 {
     public static IEnumerable<TResult> Map<TSource, TResult>(this IEnumerable<TSource> source,

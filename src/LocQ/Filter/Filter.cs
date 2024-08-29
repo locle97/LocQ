@@ -1,5 +1,3 @@
-namespace LocQ.Filter;
-
 public static class FilterExtension
 {
     public static IEnumerable<TSource> Filter<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)

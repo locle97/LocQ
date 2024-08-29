@@ -1,5 +1,3 @@
-namespace LocQ.Set;
-
 public static class UniqueExtension
 {
     public static IEnumerable<T> Unique<T>(this IEnumerable<T> source)

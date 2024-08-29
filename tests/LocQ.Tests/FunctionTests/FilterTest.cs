@@ -1,4 +1,3 @@
-using LocQ.Filter;
 using LocQ.Tests.Domains;
 
 namespace LocQ.Tests.FunctionTests;
