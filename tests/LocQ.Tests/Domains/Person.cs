@@ -2,6 +2,7 @@ namespace LocQ.Tests.Domains;
 
 public sealed class Person
 {
+    public int Id { get; set; } = -1;
     public int? Age { get; set; }
     public string? Name { get; set; }
 
@@ -10,12 +11,13 @@ public sealed class Person
 
     public override bool Equals(object? obj)
     {
-        return obj is Person sampleClass && Age == sampleClass.Age && Name == sampleClass.Name;
+        return obj is Person sampleClass 
+              && Id == sampleClass.Id;
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Age, Name);
+        return HashCode.Combine(Id);
     }
 }
 
