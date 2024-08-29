@@ -73,12 +73,12 @@ public class FlatMapTest
 
     private List<string> GetExpectedChildrenNames()
     {
-      return new List<string> { "John Jr", "Jane Jr", "Jane Sn", "Jack Jr" };
+      return new List<string> { "John Jr", "Jane Jr", "Jane Sn", "Jack Jr", "Jack Sn" };
     }
 
     private List<int> GetExpectedChildrenAges()
     {
-      return new List<int> { 1, 2, 4, 3 };
+      return new List<int> { 1, 2, 4, 3, 5 };
     }
 
     private static List<Person> GetSamplePersons()
