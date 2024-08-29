@@ -72,8 +72,10 @@ public class FilterTest
     [Fact]
     public void GiveNull_WhenFilterMethodIsCalled_ThrowAgrumentNullExceptions()
     {
+        // Arrange
+        List<object>? list = null;
         //Act
-        var result = IEnumerableExtension.Filter<object>(null, x => x != null);
+        var result = list.Filter(x => x != null);
 
         // Assert
         Assert.Throws<ArgumentNullException>(() => result.ToList());
@@ -84,7 +86,7 @@ public class FilterTest
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         //Act
-        var result = IEnumerableExtension.Filter<int>(numbers, null);
+        var result = numbers.Filter(null);
 
         // Assert
         Assert.Throws<ArgumentNullException>(() => result.ToList());
