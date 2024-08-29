@@ -5,7 +5,7 @@ namespace LocQ.Tests.FunctionTests;
 public class FilterTest
 {
     [Fact]
-    public void GiveListOfNumber_WhenFilterMethodIsCalledWithEvenPredicate_ThenReturnEvenNumber()
+    public void Filter_GiveListOfNumber_ThenReturnEvenNumber()
     {
         //Arrange
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -19,7 +19,7 @@ public class FilterTest
     }
 
     [Fact]
-    public void GiveListOfNumber_WhenFilterMethodIsCalledWithOddPredicate_ThenReturnOddNumbers()
+    public void Filter_GiveListOfNumber_ThenReturnOddNumbers()
     {
         //Arrange
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -33,7 +33,7 @@ public class FilterTest
     }
 
     [Fact]
-    public void GiveAListOfString_WhenFilterMethodIsCalledWithStartWithPredicate_ThenReturnListOfStringStartWith()
+    public void Filter_GiveAListOfString_ThenReturnListOfStringStartWith()
     {
         //Arrange
         List<string> listOfStrings = new() { "Foo", "Bar", "FooBar", "Hello", "World!" };
@@ -47,7 +47,7 @@ public class FilterTest
     }
 
     [Fact]
-    public void GiveListOfObject_WhenFilterWithValueGreaterThan10_ThenReturnListOfObjectMatchConditions()
+    public void Filter_GiveListOfObject_ThenReturnListOfObjectMatchConditions()
     {
         //Arrange
         List<Person> objects = new() {
@@ -70,7 +70,7 @@ public class FilterTest
     }
 
     [Fact]
-    public void GiveNull_WhenFilterMethodIsCalled_ThrowAgrumentNullExceptions()
+    public void Filter_GiveNull_ThrowAgrumentNullExceptions()
     {
         // Arrange
         List<object>? list = null;
@@ -82,7 +82,7 @@ public class FilterTest
     }
 
     [Fact]
-    public void GiveNullPredicate_WhenFilterMethodIsCalled_ThrowAgrumentNullExceptions()
+    public void Filter_GiveNullPredicate_ThrowAgrumentNullExceptions()
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         //Act
