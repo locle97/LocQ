@@ -8,11 +8,7 @@ public class FlatMapTest
     public void FlatMap_ListPerson_ListChildren()
     {
         // Arrange
-        var list = new List<Person> {
-          new Person { Name = "John", Age = 20, Children = new List<Person> { new Person { Name = "John Jr", Age = 1 } } },
-          new Person { Name = "Jane", Age = 30, Children = new List<Person> { new Person { Name = "Jane Jr", Age = 2 }, new Person { Name = "Jane Sn", Age = 4} } },
-          new Person { Name = "Jack", Age = 40, Children = new List<Person> { new Person { Name = "Jack Jr", Age = 3 } } },
-        };
+        var list = GetSamplePersons();
         var expected = GetExpectedChildrenNames();
 
         // Act
@@ -30,11 +26,7 @@ public class FlatMapTest
     public void FlatMap_ListPerson_ListChildrenNames()
     {
         // Arrange
-        var list = new List<Person> {
-          new Person { Name = "John", Age = 20, Children = new List<Person> { new Person { Name = "John Jr", Age = 1 } } },
-          new Person { Name = "Jane", Age = 30, Children = new List<Person> { new Person { Name = "Jane Jr", Age = 2 }, new Person { Name = "Jane Sn", Age = 4} } },
-          new Person { Name = "Jack", Age = 40, Children = new List<Person> { new Person { Name = "Jack Jr", Age = 3 } } },
-        };
+        var list = GetSamplePersons();
         var expected = GetExpectedChildrenNames();
 
         // Act
@@ -94,7 +86,7 @@ public class FlatMapTest
         return new List<Person> {
           new Person { Name = "John", Age = 20, Children = new List<Person> { new Person { Name = "John Jr", Age = 1 } } },
           new Person { Name = "Jane", Age = 30, Children = new List<Person> { new Person { Name = "Jane Jr", Age = 2 }, new Person { Name = "Jane Sn", Age = 4} } },
-          new Person { Name = "Jack", Age = 40, Children = new List<Person> { new Person { Name = "Jack Jr", Age = 3 } } },
+          new Person { Name = "Jack", Age = 40, Children = new List<Person> { new Person { Name = "Jack Jr", Age = 3 }, new Person { Name = "Jack Sn", Age = 5} } },
         };
     }
 
