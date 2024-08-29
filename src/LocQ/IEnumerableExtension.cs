@@ -33,4 +33,10 @@ public static class IEnumerableExtension
             yield return selector(item);
         }
     }
+
+    public static IEnumerable<TResult> FlatMap<TSource, TResult>(this IEnumerable<TSource> source,
+                                                                Func<TSource, IEnumerable<TResult>> selector)
+    {
+      throw new NotImplementedException();
+    }
 }
