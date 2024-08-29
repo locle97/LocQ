@@ -1,3 +1,4 @@
+namespace LocQ.Filter;
 
 public static class FilterExtension
 {
