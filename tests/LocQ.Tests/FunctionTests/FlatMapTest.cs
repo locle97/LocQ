@@ -15,7 +15,7 @@ public class FlatMapTest
         IEnumerable<Person> result = list.FlatMap(x => x.Children);
 
         // Assert
-        Assert.Equal(4, result.Count());
+        Assert.Equal(expected.Count, result.Count());
         foreach (var item in result)
         {
             Assert.Contains(item.Name, expected);
@@ -33,7 +33,7 @@ public class FlatMapTest
         IEnumerable<string?> result = list.FlatMap(x => x.ChildrenNames);
 
         // Assert
-        Assert.Equal(list.Count(), result.Count());
+        Assert.Equal(expected.Count, result.Count());
         foreach (var item in result)
         {
             Assert.Contains(item, expected);
@@ -51,7 +51,7 @@ public class FlatMapTest
         IEnumerable<int?> result = list.FlatMap(x => x.Children.Map(c => c.Age));
 
         // Assert
-        Assert.Equal(list.Count(), result.Count());
+        Assert.Equal(expected.Count, result.Count());
         foreach (var item in result)
         {
             Assert.Contains(item.Value, expected);
