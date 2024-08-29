@@ -1,4 +1,4 @@
-using LocQ.Tests.SampleTypes;
+using LocQ.Tests.Domains;
 
 namespace LocQ.Tests.FunctionTests;
 
@@ -50,21 +50,21 @@ public class FilterTest
     public void GiveListOfObject_WhenFilterWithValueGreaterThan10_ThenReturnListOfObjectMatchConditions()
     {
         //Arrange
-        List<SampleClass> objects = new() {
-          new SampleClass { Value = 5, Name = "Five" },
-          new SampleClass { Value = 10, Name = "Ten" },
-          new SampleClass { Value = 15, Name = "Fifteen" },
-          new SampleClass { Value = 20, Name = "Twenty" }
+        List<Person> objects = new() {
+          new Person { Age = 5, Name = "Five" },
+          new Person { Age = 10, Name = "Ten" },
+          new Person { Age = 15, Name = "Fifteen" },
+          new Person { Age = 20, Name = "Twenty" }
         };
 
         //Act
-        var result = objects.Filter(x => x.Value > 10);
+        var result = objects.Filter(x => x.Age > 10);
 
         //Assert
         Assert.Equal(2, result.Count());
-        Assert.Equal(new List<SampleClass> {
-          new SampleClass { Value = 15, Name = "Fifteen" },
-          new SampleClass { Value = 20, Name = "Twenty" }
+        Assert.Equal(new List<Person> {
+          new Person { Age = 15, Name = "Fifteen" },
+          new Person { Age = 20, Name = "Twenty" }
         }, result);
 
     }
