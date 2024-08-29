@@ -2,7 +2,7 @@ using LocQ.Tests.SampleTypes;
 
 namespace LocQ.Tests.FunctionTests;
 
-public class WhereTest
+public class FilterTest
 {
     [Fact]
     public void GiveListOfNumber_WhenFilterMethodIsCalledWithEvenPredicate_ThenReturnEvenNumber()
