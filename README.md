@@ -2,39 +2,23 @@
 
 ## Introduction
 
-I knew about TDD (Test Driven Development) for a long time ago, however I haven't tried it yet.
+I've been aware of TDD (Test Driven Development) for a long time, but I haven't tried it until now.
 Understand it as a development way which start writing the test before detail implementation.
 
-In this repo, I would like to givea it a try that implement LinQ manually in TDD way. This is a the best time for me to understand more about LinQ and practice TDD.
+In this repo, I would like to give it a try that implement LinQ manually in TDD way. This is a the best time for me to understand more about LinQ and practice TDD.
 
-## TDD (Test driven development)
+## Definitions
 
-### What is TDD?
+### TDD (Test driven development)
 
-Test driven development is a software development practice that require developer to write the test cases before detail implementation.
+Test Driven Development (TDD) is a software development practice where developers write test cases before implementing the actual code. This process ensures that the code meets the required functionality from the outset.
 
-Based on the requirements, developer will know exactly expectation their function should return. So that they can write a test first then refactoring their code to adapt the test cases.
+### LinQ
 
-### Why use TDD?
+## Detailed implementation guide
 
-### Pros and Cons of TDD
+## Best practices and considerations
 
-### How to apply TDD?
+## Performance
 
-## LinQ
-
-### What is LinQ
-
-### How LinQ works?
-
-### Why use LinQ?
-
-## Development process
-
-### Step 1: Declare a new method
-
-### Step 2: Write unit test
-
-### Step 3: Implement and run test case until all tests passed
-
-## Referenced
+## References
