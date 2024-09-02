@@ -11,7 +11,7 @@ public class FilterTest
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         //Act
-        var result = numbers.Filter(x => x % 2 == 0);
+        var result = numbers.FilterManual(x => x % 2 == 0);
 
         //Assert
         Assert.Equal(5, result.Count());
@@ -25,7 +25,7 @@ public class FilterTest
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         //Act
-        var result = numbers.Filter(x => x % 2 != 0);
+        var result = numbers.FilterManual(x => x % 2 != 0);
 
         //Assert
         Assert.Equal(5, result.Count());
@@ -39,7 +39,7 @@ public class FilterTest
         List<string> listOfStrings = new() { "Foo", "Bar", "FooBar", "Hello", "World!" };
 
         //Act
-        var result = listOfStrings.Filter(x => x.StartsWith("Foo"));
+        var result = listOfStrings.FilterManual(x => x.StartsWith("Foo"));
 
         //Assert
         Assert.Equal(2, result.Count());
@@ -58,7 +58,7 @@ public class FilterTest
         };
 
         //Act
-        var result = objects.Filter(x => x.Age > 10);
+        var result = objects.FilterManual(x => x.Age > 10);
 
         //Assert
         Assert.Equal(2, result.Count());
@@ -74,11 +74,12 @@ public class FilterTest
     {
         // Arrange
         List<object>? list = null;
+
         //Act
-        var result = list.Filter(x => x != null);
+        Action result = () => list.FilterManual(x => x != null);
 
         // Assert
-        Assert.Throws<ArgumentNullException>(() => result.ToList());
+        Assert.Throws<ArgumentNullException>(result);
     }
 
     [Fact]
@@ -86,9 +87,9 @@ public class FilterTest
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         //Act
-        var result = numbers.Filter(null);
+        Action result = () => numbers.FilterManual(null);
 
         // Assert
-        Assert.Throws<ArgumentNullException>(() => result.ToList());
+        Assert.Throws<ArgumentNullException>(result);
     }
 }
