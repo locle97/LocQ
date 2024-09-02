@@ -24,6 +24,12 @@ public static class FilterExtension
         ArgumentNullException.ThrowIfNull(source);
         ArgumentNullException.ThrowIfNull(predicate);
 
+        if(source is IList<TSource> list)
+        {
+            return new FilterManualListEnumerable<TSource>(list, predicate);
+        }
+        
+
         return new FilterManualEnumerable<TSource>(source, predicate);
     }
 
@@ -93,6 +99,80 @@ public static class FilterExtension
         public void Dispose()
         {
             _sourceEnumerator.Dispose();
+        }
+
+    }
+
+    private sealed class FilterManualListEnumerable<TSource> : IEnumerable<TSource>
+    {
+        private IList<TSource> _source;
+        private Func<TSource, bool> _predicate;
+
+        public FilterManualListEnumerable(IList<TSource> source, Func<TSource, bool> predicate)
+        {
+            this._source = source;
+            this._predicate = predicate;
+        }
+
+        public IEnumerator<TSource> GetEnumerator()
+        {
+            return new FilterManualListEnumerator<TSource>(_source, _predicate);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    private sealed class FilterManualListEnumerator<TSource> : IEnumerator<TSource>
+    {
+        private IList<TSource> _source;
+        private Func<TSource, bool> _predicate;
+        private TSource _current = default!;
+        private int _state = 0;
+        private int _index = 0;
+
+        public FilterManualListEnumerator(IList<TSource> source, Func<TSource, bool> predicate)
+        {
+            this._source = source;
+            this._predicate = predicate;
+        }
+
+        public TSource Current => _current;
+
+        object IEnumerator.Current => Current!;
+
+        public bool MoveNext()
+        {
+            if (_state == 0)
+            {
+                _index = 0;
+                _state = 1;
+            }
+
+            while(_index < _source.Count)
+            {
+                if(_predicate(_source[_index]))
+                {
+                    _current = _source[_index];
+                    _index++;
+                    return true;
+                }
+                _index++;
+            }
+
+            Dispose();
+            return false;
+        }
+
+        public void Reset()
+        {
+            throw new NotSupportedException();
+        }
+
+        public void Dispose()
+        {
+            // Invalidate the enumerator.
+            _index = -1;
+            _state = -1;
         }
 
     }
