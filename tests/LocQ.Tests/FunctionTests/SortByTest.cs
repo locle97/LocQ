@@ -34,7 +34,7 @@ public class SortByTest
     public void SortBy_GivenNullList_ThenThrowArgumentNullException()
     {
         //Arrange
-        List<int> list = null;
+        List<int> list = null!;
 
         //Act
         Action act = () => list.SortBy(x => x);
@@ -50,7 +50,7 @@ public class SortByTest
         var list = new List<int> { 1, 2, 3, 4, 5 };
 
         //Act
-        Action act = () => SortByExtension.SortBy<int, object>(list, null);
+        Action act = () => SortByExtension.SortBy<int, object>(list, null!);
 
         //Assert
         Assert.Throws<ArgumentNullException>(act);
