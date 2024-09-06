@@ -1,25 +1,30 @@
-﻿using System.Diagnostics;
+﻿using System.Linq;
+using System.Diagnostics;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
-Stopwatch sw = new Stopwatch();
-sw.Start();
-
-List<int> list1 = new(), list2 = new();
-
-for (int i = 0; i < 100000000; i++)
+[MemoryDiagnoser(true)]
+public class SortTest
 {
-    list1.Add(i);
-    list2.Add(i);
+    private static int[] array = Enumerable.Range(0, 10_000_000).ToArray();
+
+    [Benchmark]
+    public void LinQSort()
+    {
+        foreach (var item in array.OrderBy(t => t * t)) { }
+    }
+
+    [Benchmark]
+    public void LocQSortBy()
+    {
+        foreach (var item in array.SortBy(t => t * t)) { }
+    }
 }
 
-sw.Stop();
-Console.WriteLine($"Time taken to add items in two lists: {sw.ElapsedMilliseconds} ms");
-
-sw.Restart();
-list1.Zip(list2).ToList();
-sw.Stop();
-Console.WriteLine($"Time taken to Zip: {sw.ElapsedMilliseconds} ms");
-
-sw.Restart();
-list1.Rar(list2).ToList();
-sw.Stop();
-Console.WriteLine($"Time taken to Rar: {sw.ElapsedMilliseconds} ms");
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var summary = BenchmarkRunner.Run<SortTest>();
+    }
+}
