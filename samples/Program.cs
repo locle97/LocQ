@@ -6,7 +6,7 @@ using BenchmarkDotNet.Running;
 [MemoryDiagnoser(true)]
 public class SortTest
 {
-    private static int[] array = Enumerable.Range(0, 10_000_000).ToArray();
+    private static int[] array = Enumerable.Range(0, 10_000).ToArray();
 
     [Benchmark]
     public void LinQSort()
