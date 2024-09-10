@@ -17,6 +17,8 @@ Test Driven Development (TDD) is a software development practice where developer
 
 ## Detailed implementation guide
 
+![TDD draw](./docs/TDD.png)
+
 ## Best practices and considerations
 
 ## Performance
